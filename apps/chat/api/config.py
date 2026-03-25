@@ -7,10 +7,10 @@ class Settings(BaseSettings):
     api_key: str = ""
 
     # Provider selection per modality (default: openai)
-    image_provider: str = "openai"
-    audio_provider: str = "openai"
-    video_provider: str = "openai"
-    chat_provider: str = "openai"
+    image_provider: str = "vllm_omni"
+    audio_provider: str = "vllm_omni"
+    video_provider: str = "vllm_omni"
+    chat_provider: str = "vllm_omni"
 
     # Per-service URL/key overrides (all fallback to aibrix_gateway_url / api_key)
     chat_api_url: str = ""
@@ -27,12 +27,12 @@ class Settings(BaseSettings):
     video_api_key: str = ""
 
     # Default model names per capability
-    image_model: str = ""
-    image_edit_model: str = ""
-    asr_model: str = ""
-    tts_model: str = ""
-    tts_voice: str = ""  # Name of a supported speaker that can be found in the API response
-    video_model: str = ""
+    image_model: str = "Qwen-Image"
+    image_edit_model: str = "Qwen/Qwen3-Image-Edit"
+    asr_model: str = "Qwen/Qwen3-ASR-1.7B"
+    tts_model: str = "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+    tts_voice: str = "vivian"
+    video_model: str = "Wan-AI/Wan2.2-T2V-A14B-Diffusers"
 
     # Model filtering — comma-separated allowlists (empty = show all)
     # MODELS_ALLOWLIST applies to all capabilities; per-capability overrides below
