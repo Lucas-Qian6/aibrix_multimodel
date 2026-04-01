@@ -156,18 +156,19 @@ func (s *Server) HandleResponseBody(ctx context.Context, requestID string, req *
 }
 
 func isLanguageRequest(requestPath string) bool {
-	nonLanguagePrefixes := []string{
-		PathImagesGenerations,
-		PathVideoGenerations,
-		PathAudioTranscriptions,
-		PathAudioTranslations,
+	languagePrefixes := []string{
+		PathChatCompletions,
+		PathCompletions,
+		PathEmbeddings,
+		PathRerank,
+		PathClassify,
 	}
-	for _, prefix := range nonLanguagePrefixes {
+	for _, prefix := range languagePrefixes {
 		if strings.HasPrefix(requestPath, prefix) {
-			return false
+			return true
 		}
 	}
-	return true
+	return false
 }
 
 // processLanguageResponse processes output response for /chatcompletions, /completions and /embedding endpoints.
