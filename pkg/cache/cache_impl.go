@@ -281,9 +281,8 @@ func (c *Store) DoneRequestTrace(ctx *types.RoutingContext, requestID string, mo
 		klog.V(5).Infof("inputTokens: %v, outputTokens: %v, trace key: %s", inputTokens, outputTokens, traceKey)
 	}
 
-	if meta != nil && meta.OutputPredictor != nil {
-		meta.OutputPredictor.AddTrace(int(inputTokens), int(outputTokens), 1)
-	}
+	//
+	meta.OutputPredictor.AddTrace(int(inputTokens), int(outputTokens), 1)
 }
 
 // AddSubscriber registers new metric subscriber
