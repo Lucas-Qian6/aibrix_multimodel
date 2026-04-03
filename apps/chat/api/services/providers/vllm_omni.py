@@ -390,7 +390,7 @@ class VLLMOmniAudioProvider(AudioProvider):
         self,
         file_bytes: bytes,
         filename: str,
-        model: str = "Qwen/Qwen3-ASR-1.7B",
+        model: str = "whisper-1",
         language: str | None = None,
     ) -> dict:
         # vLLM ASR is OpenAI-compatible

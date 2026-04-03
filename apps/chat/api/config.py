@@ -7,10 +7,10 @@ class Settings(BaseSettings):
     api_key: str = ""
 
     # Provider selection per modality (default: openai)
-    image_provider: str = "vllm_omni"
-    audio_provider: str = "vllm_omni"
-    video_provider: str = "vllm_omni"
-    chat_provider: str = "vllm_omni"
+    image_provider: str = "openai"
+    audio_provider: str = "openai"
+    video_provider: str = "openai"
+    chat_provider: str = "openai"
 
     # Per-service URL/key overrides (all fallback to aibrix_gateway_url / api_key)
     chat_api_url: str = ""
