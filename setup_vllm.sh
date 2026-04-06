@@ -10,10 +10,11 @@ uv venv --python 3.12 --seed
 source .venv/bin/activate
 
 echo "==> Installing vllm..."
-uv pip install vllm==0.18.0 --torch-backend=auto
+uv pip install vllm==0.19.0 --torch-backend=auto
 
 echo "==> Installing vllm[audio]..."
 uv pip install "vllm[audio]"
+uv pip install orjson
 
 echo "==> Cloning and installing vllm-omni..."
 git clone https://github.com/vllm-project/vllm-omni.git
