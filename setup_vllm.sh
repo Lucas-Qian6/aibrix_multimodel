@@ -21,4 +21,7 @@ git clone https://github.com/vllm-project/vllm-omni.git
 cd vllm-omni
 uv pip install -e .
 
+echo "==> Installing system dependencies..."
+apt-get update && apt-get install -y ffmpeg vim
+
 echo "==> Done! Activate the venv with: source .venv/bin/activate"
